@@ -1,9 +1,10 @@
 import "./App.scss";
+import HomePage from "./components/pages/Home";
 
 const App = () => {
   return (
     <div className="container">
-      <h1>Hallo World</h1>
+      <HomePage />
     </div>
   );
 };
