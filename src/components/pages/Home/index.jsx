@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Search from "../../common/search/Search";
 import { WEATHER_API_KEY, WEATHER_API_URL } from "../../../data/geoDbAPI";
+import CurrentWeather from "../../curent-weather/CurentWeather";
+import Forecast from "../../forecast/Forecast";
 
 const HomePage = () => {
   const [currentWeather, setCurrentWeather] = useState(null);
@@ -23,13 +25,11 @@ const HomePage = () => {
       .catch(console.log);
   };
 
-  console.log(currentWeather);
-  console.log(forecast);
   return (
     <>
       <Search onSearchChange={handleOnSearchChange} />
-      {/* {currentWeather && <CurrentWeather data={currentWeather} />} */}
-      {/* {forecast && <Forecast data={forecast} />} */}
+      {currentWeather && <CurrentWeather data={currentWeather} />}
+      {forecast && <Forecast data={forecast} />}
     </>
   );
 };
